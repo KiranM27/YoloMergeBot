@@ -16,11 +16,7 @@ class Runner:
 
         file = files[0]
         file_path = file["file_path_from_here"]
-        file_content = repo_metadata_generator.get_file_content(file_path)
-
-        metadata = repo_metadata_generator.get_metadata_from_llm(
-            file_path=file_path, file_content=file_content
-        )
+        metadata = repo_metadata_generator.get_metadata_of_file(file_path)
         pprint(metadata)
 
 

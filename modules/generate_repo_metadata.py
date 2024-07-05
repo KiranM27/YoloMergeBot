@@ -29,6 +29,7 @@ class RepoMetaDataGenerator:
         self.chain = prompt | self.model
 
     def list_all_files(self) -> list:
+        print("[INFO] Getting File Paths")
         files = []  # list of dicts containing
         # the path to the file from the src folder
         # the path to the file from the root of the repo
@@ -53,13 +54,16 @@ class RepoMetaDataGenerator:
         return files
 
     def get_file_content(self, file_path: str) -> str:
+        print(f"[INFO] Getting content of {file_path}")
         with open(file_path, "r") as file:
             return file.read()
 
     def clean_up_file_content(self, file_content: str) -> str:
+        print("[INFO] Cleaning up file content")
         return file_content.replace("\n", " ").replace("\t", " ").replace("  ", " ")
 
     def get_metadata_from_llm(self, file_path: str, file_content: str) -> str:
+        print(f"[INFO] Generating metadata for {file_path}")
         query = METADATA_GENERATION_HUMAN_PROMPT.format(
             path=file_path, code=file_content
         )
@@ -67,7 +71,7 @@ class RepoMetaDataGenerator:
         content = response.content
         return content
 
-    def get_metadata(self, file_path: str) -> str:
+    def get_metadata_of_file(self, file_path: str) -> str:
         file_content = self.get_file_content(file_path)
-        file_content = self.clean_up_file_content(file_content)
-        return file_content
+        metadata = self.get_metadata_from_llm(file_path, file_content)
+        return metadata
