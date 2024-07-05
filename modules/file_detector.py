@@ -38,6 +38,9 @@ class FileDetector:
         query = FILE_DETECTION_HUMAN_PROMPT.format(input=self.user_query, metadata=self.metadata)
         response = self.chain.invoke({"input": query})
         content = response.content
+        
+        # parse the content into a list of dicts
+        content = json.loads(content)
         return content
 
 
