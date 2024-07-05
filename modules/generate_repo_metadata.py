@@ -1,5 +1,11 @@
 import os
-from modules.constants import DOCS_FOLDER
+from modules.constants import (
+    DOCS_FOLDER,
+    METADATA_GENERATION_SYSTEM_PROMPT,
+    METADATA_GENERATION_HUMAN_PROMPT,
+)
+from modules.models import Models
+from langchain_core.prompts.chat import ChatPromptTemplate
 
 
 class RepoMetaDataGenerator:
@@ -9,6 +15,18 @@ class RepoMetaDataGenerator:
 
         # ensure that the docs folder exists
         os.makedirs(DOCS_FOLDER, exist_ok=True)
+
+        # get the model
+        models = Models()
+        self.model = models.get_metadata_generator_model()
+
+        system_prompt = METADATA_GENERATION_SYSTEM_PROMPT
+        human_prompt = "{input}"
+        prompt = ChatPromptTemplate.from_messages(
+            [("system", system_prompt), ("human", human_prompt)]
+        )
+
+        self.chain = prompt | self.model
 
     def list_all_files(self) -> list:
         files = []  # list of dicts containing
@@ -40,10 +58,15 @@ class RepoMetaDataGenerator:
 
     def clean_up_file_content(self, file_content: str) -> str:
         return file_content.replace("\n", " ").replace("\t", " ").replace("  ", " ")
-    
+
     def get_metadata_from_llm(self, file_path: str, file_content: str) -> str:
-        pass
-    
+        query = METADATA_GENERATION_HUMAN_PROMPT.format(
+            path=file_path, code=file_content
+        )
+        response = self.chain.invoke({"input": query})
+        content = response.content
+        return content
+
     def get_metadata(self, file_path: str) -> str:
         file_content = self.get_file_content(file_path)
         file_content = self.clean_up_file_content(file_content)
