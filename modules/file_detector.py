@@ -15,14 +15,16 @@ class FileDetector:
         self.model = models.get_file_detection_model()
         self.user_query = user_query
 
-        system_prompt = FILE_DETECTION_SYSTEM_PROMPT
-        
+        # create the prompt
+        system_prompt = FILE_DETECTION_SYSTEM_PROMPT        
         human_prompt = "{input}"
         prompt = ChatPromptTemplate.from_messages(
             [("system", system_prompt), ("human", human_prompt)]
         )
 
         self.chain = prompt | self.model
+
+        # fetch the metadata from the json 
 
     def detect_files(self):
         query = FILE_DETECTION_HUMAN_PROMPT.format(input=self.user_query)

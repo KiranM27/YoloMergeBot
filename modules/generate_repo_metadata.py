@@ -1,22 +1,19 @@
 import os
 import time
 from modules.constants import (
-    DOCS_FOLDER,
     METADATA_GENERATION_SYSTEM_PROMPT,
     METADATA_GENERATION_HUMAN_PROMPT,
-    METADATA_FILE
 )
 from modules.models import Models
+from modules.file_helpers import FileHelpers
 from langchain_core.prompts.chat import ChatPromptTemplate
 
 
 class RepoMetaDataGenerator:
     def __init__(self, repo_rel_path, src_folder=""):
+        # init the vars
         self.repo_path = os.path.abspath(repo_rel_path)
         self.src_folder_path = os.path.join(self.repo_path, src_folder)
-
-        # ensure that the docs folder exists
-        os.makedirs(DOCS_FOLDER, exist_ok=True)
 
         # get the model
         models = Models()
@@ -29,6 +26,9 @@ class RepoMetaDataGenerator:
         )
 
         self.chain = prompt | self.model
+
+        # init the file helpers
+        self.file_helpers = FileHelpers()
 
     def list_all_files(self) -> list:
         print("[INFO] Getting File Paths")
@@ -55,11 +55,6 @@ class RepoMetaDataGenerator:
 
         return files
 
-    def get_file_content(self, file_path: str) -> str:
-        print(f"[INFO] Getting content of {file_path}")
-        with open(file_path, "r") as file:
-            return file.read()
-
     def clean_up_file_content(self, file_content: str) -> str:
         print("[INFO] Cleaning up file content")
         return file_content.replace("\n", " ").replace("\t", " ").replace("  ", " ")
@@ -74,7 +69,7 @@ class RepoMetaDataGenerator:
         return content
 
     def get_metadata_of_file(self, file_path: str) -> str:
-        file_content = self.get_file_content(file_path)
+        file_content = self.file_helpers.get_file_content(file_path)
         metadata = self.get_metadata_from_llm(file_path, file_content)
         return metadata
     
@@ -90,13 +85,13 @@ class RepoMetaDataGenerator:
     
     def write_metadata_to_file(self, metadata: list):
         print("[INFO] Writing metadata to file")
-        with open(os.path.join(DOCS_FOLDER, METADATA_FILE), "w") as file:
-            file.write(str(metadata))
+        metadata_file_path = self.file_helpers.get_metadata_file_path()
+        self.file_helpers.store_file_content(metadata_file_path, str(metadata))
         print("[INFO] Metadata written to file")
 
     def generate_and_store_metadata(self):
         # if there is the metadata file already, then just return
-        if os.path.exists(os.path.join(DOCS_FOLDER, METADATA_FILE)):
+        if os.path.exists(self.file_helpers.get_metadata_file_path()):
             print("[INFO] Metadata already exists")
             return
 

@@ -13,8 +13,8 @@ METADATA_GENERATION_HUMAN_PROMPT = "The Path and Code from the file. Path: {path
 
 
 # file detection prompts
-FILE_DETECTION_SYSTEM_PROMPT = f'You are a helpful assistant that helps identify the files that need to be edited in a GitHub repository. {TARGET_REPO_INFORMATION}. Given an input prompt, you should take a look at the metadata of the files in the repository and return a list of objects corresponding to the files that need to be edited. You can return a list of potential file objects that might have to be edited. We will go over the files again to double check which of the files needs to be edited. Only return the list of objects and nothing else. The response should be a list of dicts with the keys file_name, file_path_from_src, file_path_from_root, file_path_from_here.'
-FILE_DETECTION_HUMAN_PROMPT = 'The prompt that you should use to identify the files that need to be edited is: {input}'
+FILE_DETECTION_SYSTEM_PROMPT = f'You are a helpful assistant that helps identify the files that need to be edited in a GitHub repository. {TARGET_REPO_INFORMATION}. Given an input prompt, you should take a look at the metadata of the files in the repository and return a list of objects corresponding to the files that need to be edited. You can return a list of potential file objects that might have to be edited. We will go over the files again to double check which of the files needs to be edited. Only return the list of objects and nothing else. The response should be a list of dicts with the keys file_name, file_path_from_src, file_path_from_root, file_path_from_here, metadata. Take the keys from the metadata that is passed in and return the same ones in the response. DO NOT MAKE ANY CHANGES TO THE METADATA.'
+FILE_DETECTION_HUMAN_PROMPT = 'The prompt that you should use to identify the files that need to be edited is: {input}, the metadata: {metadata}'
 
 # temperatures 
 OPEN_AI_MODEL_TEMPERATURE = 0.5
