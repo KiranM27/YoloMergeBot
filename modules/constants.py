@@ -1,8 +1,8 @@
 OPEN_AI_API_KEY = 'OPEN_AI_API_KEY' # the key used to access the openai api key in the .env file
 
 OPEN_AI__METADATA_GENERATION_MODEL = 'gpt-3.5-turbo-0125' # models - https://platform.openai.com/docs/models
-OPEN_AI_FILE_DETECTION_MODEL = 'gpt-4o'
-OPEN_AI_CODE_GENERATION_MODEL = 'gpt-4o'
+OPEN_AI_FILE_DETECTION_MODEL = 'gpt-3.5-turbo-0125'
+OPEN_AI_CODE_GENERATION_MODEL = 'gpt-3.5-turbo-0125'
 
 # information about the repo 
 TARGET_REPO_INFORMATION = 'The repository is called HyperNext, which is a template for a next js project'
