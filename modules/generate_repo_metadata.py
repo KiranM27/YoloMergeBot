@@ -1,8 +1,10 @@
 import os
+import time
 from modules.constants import (
     DOCS_FOLDER,
     METADATA_GENERATION_SYSTEM_PROMPT,
     METADATA_GENERATION_HUMAN_PROMPT,
+    METADATA_FILE
 )
 from modules.models import Models
 from langchain_core.prompts.chat import ChatPromptTemplate
@@ -75,3 +77,29 @@ class RepoMetaDataGenerator:
         file_content = self.get_file_content(file_path)
         metadata = self.get_metadata_from_llm(file_path, file_content)
         return metadata
+    
+    def generate_metadata(self):
+        files = self.list_all_files()
+        for file in files:
+            metadata = self.get_metadata_of_file(file["file_path_from_here"])
+            file["metadata"] = metadata
+
+            # sleep for a second to avoid rate limiting
+            time.sleep(1)
+        return files
+    
+    def write_metadata_to_file(self, metadata: list):
+        print("[INFO] Writing metadata to file")
+        with open(os.path.join(DOCS_FOLDER, METADATA_FILE), "w") as file:
+            file.write(str(metadata))
+        print("[INFO] Metadata written to file")
+
+    def generate_and_store_metadata(self):
+        # if there is the metadata file already, then just return
+        if os.path.exists(os.path.join(DOCS_FOLDER, METADATA_FILE)):
+            print("[INFO] Metadata already exists")
+            return
+
+        metadata = self.generate_metadata()
+        self.write_metadata_to_file(metadata)
+            

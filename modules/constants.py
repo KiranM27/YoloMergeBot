@@ -16,6 +16,7 @@ OPEN_AI_MODEL_TEMPERATURE = 0.5
 # data folder
 DATA_FOLDER = 'data'
 DOCS_FOLDER = 'docs'
+METADATA_FILE = 'metadata.json'
 
 # repo paths 
 TRAGET_REPO_RELATIVE_PATH = '../HyperNext'

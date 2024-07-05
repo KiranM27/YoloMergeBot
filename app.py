@@ -1,6 +1,5 @@
 from modules.constants import TRAGET_REPO_RELATIVE_PATH, TARGET_REPO_SRC_FOLDER
 from modules.generate_repo_metadata import RepoMetaDataGenerator
-from pprint import pprint
 
 
 class Runner:
@@ -14,10 +13,7 @@ class Runner:
             print("No files found in the repo")
             return
 
-        file = files[0]
-        file_path = file["file_path_from_here"]
-        metadata = repo_metadata_generator.get_metadata_of_file(file_path)
-        pprint(metadata)
+        repo_metadata_generator.generate_and_store_metadata()
 
 
 if __name__ == "__main__":
