@@ -7,7 +7,7 @@ from pprint import pprint
 
 class Runner:
     def __init__(self):
-        self.prompt = "Make the default mode of the app dark."
+        self.prompt = "The users should start in dark mode instead of light mode. While still maintaining the ability to switch between the two modes."
         self.target_files = []
 
     def generate_metadata(self):
