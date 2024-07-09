@@ -1,7 +1,7 @@
 import os
 import random
 import string
-from file_helpers import FileHelpers
+from modules.file_helpers import FileHelpers
 
 
 class RaiseGitHubPR:
