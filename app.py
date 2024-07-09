@@ -3,7 +3,7 @@ from modules.generate_repo_metadata import RepoMetaDataGenerator
 from modules.file_detector import FileDetector
 from modules.file_evaluator import FileEvaluator
 from modules.code_generator import CodeGenerator
-from pprint import pprint
+from modules.raise_pr import RaiseGitHubPR
 
 
 class Runner:
@@ -27,28 +27,35 @@ class Runner:
         file_detector = FileDetector(self.prompt)
         files = file_detector.detect_files()
         self.target_files = files
-        print("Files detected, that could be edited:")
-        pprint(files)
-        print("*" * 10)
+        print("Files that could be edited have been detected.")
 
     def evaluate_files(self):
         file_evaluator = FileEvaluator(self.prompt, self.target_files)
         files = file_evaluator.evaluate_files()
         self.target_files = files
-        print("Files to be edited:")
-        pprint(files)
-        print("*" * 10)
+        print("Files have been evaluated.")
 
     def generate_code(self):
         code_generator = CodeGenerator(self.prompt, self.target_files)
         code = code_generator.generate_code()
-        print("Generated code:")
-        pprint(code)
+        self.target_files = code
+        print("Generated code.")
+
+    def raise_pr(self):
+        raise_pr = RaiseGitHubPR(
+            self.prompt, TRAGET_REPO_RELATIVE_PATH, self.target_files
+        )
+        raise_pr.run()
+        print("PR raised.")
+
+    def run(self):
+        self.generate_metadata()
+        self.detect_files()
+        self.evaluate_files()
+        self.generate_code()
+        self.raise_pr()
 
 
 if __name__ == "__main__":
     runner = Runner()
-    runner.generate_metadata()
-    runner.detect_files()
-    runner.evaluate_files()
-    runner.generate_code()
+    runner.run()
