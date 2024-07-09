@@ -8,7 +8,7 @@ from pprint import pprint
 
 class Runner:
     def __init__(self):
-        self.prompt = "The users should start in dark mode instead of light mode. While still maintaining the ability to switch between the two modes."
+        self.prompt = "Change the text of the Get Started Button to Say Launch App in the Navbar / header."
         self.target_files = []
 
     def generate_metadata(self):
