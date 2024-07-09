@@ -2,20 +2,20 @@ import json
 from modules.models import Models
 from modules.file_helpers import FileHelpers
 from modules.constants import (
-    CODE_GENERATION_SYSTEM_PROMPT,
-    CODE_GENERATION_HUMAN_PROMPT,
+    FILE_EVALUATION_SYSTEM_PROMPT,
+    FILE_EVALUATION_HUMAN_PROMPT,
 )
 from langchain_core.prompts.chat import ChatPromptTemplate
 
 
-class CodeGenerator:
+class FileEvaluator:
     def __init__(self, user_query: str, target_files: list):
         models = Models()
-        self.model = models.get_code_generation_model()
+        self.model = models.get_file_evaluation_model()
         self.user_query = user_query
 
         # create the prompt
-        system_prompt = CODE_GENERATION_SYSTEM_PROMPT
+        system_prompt = FILE_EVALUATION_SYSTEM_PROMPT
         human_prompt = "{input}"
         prompt = ChatPromptTemplate.from_messages(
             [("system", system_prompt), ("human", human_prompt)]
@@ -33,8 +33,8 @@ class CodeGenerator:
 
         self.metadata = target_files
 
-    def generate_code(self):
-        query = CODE_GENERATION_HUMAN_PROMPT.format(
+    def evaluate_files(self):
+        query = FILE_EVALUATION_HUMAN_PROMPT.format(
             input=self.user_query, metadata=self.metadata
         )
         response = self.chain.invoke({"input": query})

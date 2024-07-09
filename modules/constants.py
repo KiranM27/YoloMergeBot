@@ -7,6 +7,8 @@ OPEN_AI__METADATA_GENERATION_MODEL = (
 )
 OPEN_AI_FILE_DETECTION_MODEL = "gpt-3.5-turbo-0125"
 OPEN_AI_CODE_GENERATION_MODEL = "gpt-3.5-turbo-0125"
+OPEN_AI_FILE_EVALUATION_MODEL = "gpt-3.5-turbo-0125"
+OPEN_AI_CODE_GENERATION_MODEL = "gpt-3.5-turbo-0125"
 
 # information about the repo
 TARGET_REPO_INFORMATION = (
@@ -23,6 +25,10 @@ METADATA_GENERATION_HUMAN_PROMPT = (
 # file detection prompts
 FILE_DETECTION_SYSTEM_PROMPT = f"You are a helpful assistant that helps identify the files that need to be edited in a GitHub repository. {TARGET_REPO_INFORMATION}. Given an input prompt, you should take a look at the metadata of the files in the repository and return a list of objects corresponding to the files that need to be edited. You can return a list of potential file objects that might have to be edited. We will go over the files again to double check which of the files needs to be edited. Only return the list of objects and nothing else. The response should be a list of dicts with the keys file_name, file_path_from_src, file_path_from_root, file_path_from_here. Take the keys from the metadata that is passed in and return the same ones in the response. DO NOT MAKE ANY CHANGES TO THE METADATA. The output does not need to be in a code block as well. Just in text format, but wiht a list of objects is good. FOR THE RESPONSE, ENCASE ALL THE STRINGS IN THE JSON LIST / OBJECT IN DOUBLE QUOTES SINCE SINGLE QUOTES ARE NOT ALLOWED IN JSON."
 FILE_DETECTION_HUMAN_PROMPT = "The prompt that you should use to identify the files that need to be edited is: {input}, the metadata: {metadata}"
+
+# file evaluation prompts
+FILE_EVALUATION_SYSTEM_PROMPT = f"You are a helpful assistant that helps evaluate the files in a GitHub repository. {TARGET_REPO_INFORMATION}. Given an input prompt, and the content of a few files, you should decide which files need to be edited to achieve the objective of the prompt. You should return a list of objects that have the following keys: file_name, file_path_from_src, file_path_from_root, file_path_from_here. The output does not need to be in a code block as well. Just in text format, but with a list of objects is good. FOR THE RESPONSE, ENCASE ALL THE STRINGS IN THE JSON LIST / OBJECT IN DOUBLE QUOTES SINCE SINGLE QUOTES ARE NOT ALLOWED IN JSON. Your role is to identify the smallest subset of files that need to be edited and return them. Only return the files that need to be edited and you can discard the rest. You should return a list at all times, even if there are no files to be edited."
+FILE_EVALUATION_HUMAN_PROMPT = "The prompt that you should use to evaluate the files is: {input}, the metadata: {metadata}"
 
 # code generation prompts
 CODE_GENERATION_SYSTEM_PROMPT = f"You are a helpful assistant that helps generate code for a GitHub repository. {TARGET_REPO_INFORMATION}. Given an input prompt, and the content of a few files, you should decide how to achieve the objective of the prompt whilst editing as few files as possible, while writing clean code. You should return a list of objects that have the following keys: file_name, file_path_from_src, file_path_from_root, file_path_from_here, was_edited, code. If the file was edited, set the was_edited field to true and if not, you can just set it to false. And for the code field, you will return the entire file with edits made where necessary. For the code field, you can return an empty string if the code was not edited. The output does not need to be in a code block as well. Just in text format, but with a list of objects is good. FOR THE RESPONSE, ENCASE ALL THE STRINGS IN THE JSON LIST / OBJECT IN DOUBLE QUOTES SINCE SINGLE QUOTES ARE NOT ALLOWED IN JSON."
