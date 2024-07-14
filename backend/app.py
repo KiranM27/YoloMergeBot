@@ -4,9 +4,10 @@ from modules.file_detector import FileDetector
 from modules.file_evaluator import FileEvaluator
 from modules.code_generator import CodeGenerator
 from modules.raise_pr import RaiseGitHubPR
+from flask import Flask, request, jsonify
 
 
-class Runner:
+class PRGenerator:
     def __init__(self):
         self.prompt = "Remove the Instagram and the Facebook buttons from the footer of the website."
         self.target_files = []
@@ -59,6 +60,32 @@ class Runner:
         self.raise_pr()
 
 
-if __name__ == "__main__":
-    runner = Runner()
-    runner.run()
+# Flas App
+app = Flask(__name__)
+
+
+# hello route - get request
+@app.route("/hello", methods=["GET"])
+def hello():
+    return "Hello World"
+
+
+# pr route - post request
+@app.route("/create_pr", methods=["POST"])
+def create_pr():
+    data = request.get_json()
+
+    if not data or "prompt" not in data:
+        return jsonify({"error": "No prompt provided"}), 400
+
+    prompt = data["prompt"]
+
+    # Process the prompt (you can add your logic here)
+    # For demonstration, we'll just return the prompt back
+    response = {"message": "Prompt received", "prompt": prompt}
+
+    return jsonify(response), 200
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8000, debug=True)
