@@ -5,7 +5,6 @@ from modules.file_evaluator import FileEvaluator
 from modules.code_generator import CodeGenerator
 from modules.raise_pr import RaiseGitHubPR
 
-
 class Runner:
     def __init__(self):
         self.prompt = "Change the text of the Get Started Button to Say Launch App in the Navbar / header."
@@ -42,11 +41,14 @@ class Runner:
         print("Generated code.")
 
     def raise_pr(self):
-        raise_pr = RaiseGitHubPR(
-            self.prompt, TRAGET_REPO_RELATIVE_PATH, self.target_files
-        )
-        raise_pr.run()
-        print("PR raised.")
+        try:
+            raise_pr = RaiseGitHubPR(
+                self.prompt, TRAGET_REPO_RELATIVE_PATH, self.target_files
+            )
+            raise_pr.run()
+            print("PR raised.")
+        except Exception as e:
+            print("Error in raising PR. Try again later. The error is: ", e)
 
     def run(self):
         self.generate_metadata()

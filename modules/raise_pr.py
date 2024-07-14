@@ -39,7 +39,7 @@ class RaiseGitHubPR:
 
     def commit_files(self):
         os.system("git add .")
-        os.system("git commit -m 'feat: AI Automated Code Change'")
+        os.system("git commit -m 'feat: yolo merge bot commit'")
 
     def push_to_github(self, branch_name):
         os.system(f"git push origin {branch_name}")
@@ -50,6 +50,9 @@ class RaiseGitHubPR:
             f"gh pr create --title 'AI Automated PR' --body '{pr_description}' --base main"
         )
 
+    def clean_up(self):
+        os.system("git checkout main")
+
     def run(self):
         branch_name = self.get_branch_name()
         self.cd_to_target_repo()
@@ -58,3 +61,4 @@ class RaiseGitHubPR:
         self.commit_files()
         self.push_to_github(branch_name)
         self.raise_pr()
+        self.clean_up()
