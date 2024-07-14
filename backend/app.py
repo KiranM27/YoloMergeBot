@@ -1,10 +1,11 @@
-from modules.constants import TRAGET_REPO_RELATIVE_PATH, TARGET_REPO_SRC_FOLDER
-from modules.generate_repo_metadata import RepoMetaDataGenerator
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+from modules.code_generator import CodeGenerator
+from modules.constants import TARGET_REPO_SRC_FOLDER, TRAGET_REPO_RELATIVE_PATH
 from modules.file_detector import FileDetector
 from modules.file_evaluator import FileEvaluator
-from modules.code_generator import CodeGenerator
+from modules.generate_repo_metadata import RepoMetaDataGenerator
 from modules.raise_pr import RaiseGitHubPR
-from flask import Flask, request, jsonify
 
 
 class PRGenerator:
@@ -60,8 +61,9 @@ class PRGenerator:
         self.raise_pr()
 
 
-# Flas App
+# Flak App
 app = Flask(__name__)
+CORS(app)
 
 
 # hello route - get request
@@ -79,6 +81,11 @@ def create_pr():
         return jsonify({"message": "No prompt provided"}), 200
 
     prompt = data["prompt"]
+
+    # strip the prompt, clean it up, and if it is empty, return
+    prompt = prompt.strip()
+    if not prompt:
+        return jsonify({"message": "Prompt is empty"}), 200
 
     pr_generator = PRGenerator(prompt)
     pr_generator.run()
