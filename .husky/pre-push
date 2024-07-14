@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# yarn build
+# uncomment the above line if you want to enable the pre push hook

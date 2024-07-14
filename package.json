@@ -1,0 +1,25 @@
+{
+  "name": "prompt-to-pr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiranM27/prompt-to-pr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KiranM27/prompt-to-pr/issues"
+  },
+  "homepage": "https://github.com/KiranM27/prompt-to-pr#readme",
+  "dependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "husky": "^9.0.11"
+  }
+}
