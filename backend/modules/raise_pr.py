@@ -25,6 +25,8 @@ class RaiseGitHubPR:
     # use a different terminal instance to run commands
     # such as creating a new branch
     def create_branch(self, branch_name):
+        # pull the latest changes from the main branch
+        os.system("git pull origin main")
         os.system(f"git checkout -b {branch_name}")
 
     def replace_the_files_in_repo(self):
