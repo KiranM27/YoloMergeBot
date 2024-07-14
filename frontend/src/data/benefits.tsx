@@ -23,22 +23,22 @@ export const IconWrapperClass = 'w-7 h-7 text-white';
 
 export const PrimaryBenefits: TBenefits = {
   title: 'Benefits',
-  desc: 'HyperNext comes fully equipped with utilites such as Redux, React Query, React Portals and more to help you hit the ground running.',
+  desc: 'YoloMergeBot reduces the time spent on menial tasks, thereby allowing developers to focus on what really matters.',
   image: <CodeImage />,
   bullets: [
     {
-      title: 'Redux',
-      desc: 'Redux is a predictable state container for JavaScript apps.',
+      title: 'Automated Code Changes',
+      desc: 'Automatically analyzes requirements and modifies the codebase, reducing manual effort.',
       icon: <IconWrapper icon={<FaceSmileIcon />} />,
     },
     {
-      title: 'React Query',
-      desc: 'React Query is a powerful data fetching library for React.',
+      title: 'Faster Turnaround',
+      desc: 'Ensures faster turnaround times for minor changes, speeding up the development process.',
       icon: <IconWrapper icon={<ChartBarSquareIcon />} />,
     },
     {
-      title: 'React Portals',
-      desc: 'Render components outside their parent hierarchy with Portals.',
+      title: 'Efficient Task Management',
+      desc: 'Streamlines task management by automating repetitive tasks, leading to a more productive environment.',
       icon: <IconWrapper icon={<CursorArrowRaysIcon />} />,
     },
   ],
@@ -46,22 +46,22 @@ export const PrimaryBenefits: TBenefits = {
 
 export const SecondaryBenefits: TBenefits = {
   title: 'Other Benefits',
-  desc: 'HyperNext also comes with other features that make it a great choice for your next project.',
+  desc: 'YoloMergeBot also comes with other features that make it a great choice for your development workflow.',
   image: <MobileImage />,
   bullets: [
     {
-      title: 'Mobile Responsive Template',
-      desc: 'HyperNext is designed as a mobile first responsive template.',
+      title: 'Seamless Integration',
+      desc: 'Easily integrates with existing CI/CD pipelines and development tools.',
       icon: <IconWrapper icon={<DevicePhoneMobileIcon />} />,
     },
     {
-      title: 'Powered by Next.js & TailwindCSS',
-      desc: 'This template is powered by latest technologies and tools.',
+      title: 'Customizable Prompts',
+      desc: 'Supports customizable prompts for more tailored code changes.',
       icon: <IconWrapper icon={<AdjustmentsHorizontalIcon />} />,
     },
     {
-      title: 'Dark & Light Mode',
-      desc: 'HyperNext comes with a zero-config light & dark mode. ',
+      title: 'Enhanced Collaboration',
+      desc: 'Facilitates better collaboration by raising PRs for review, ensuring code quality and teamwork.',
       icon: <IconWrapper icon={<SunIcon />} />,
     },
   ],

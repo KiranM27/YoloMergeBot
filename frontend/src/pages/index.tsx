@@ -17,7 +17,7 @@ const Home: PageWithPrimaryLayout = () => {
 
         {/* Benefits Section */}
         <div className="mt-32 w-full">
-          <SectionTitle title=" Why should you use HyperNext">{PRODUCT_DESCRIPTION}</SectionTitle>
+          <SectionTitle title=" Why should you use YoloMergeBot">{PRODUCT_DESCRIPTION}</SectionTitle>
           <div className="my-4" />
           <Benefits imgPos="left" data={PrimaryBenefits} />
           <Benefits imgPos="right" data={SecondaryBenefits} />
