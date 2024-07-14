@@ -8,8 +8,8 @@ from flask import Flask, request, jsonify
 
 
 class PRGenerator:
-    def __init__(self):
-        self.prompt = "Remove the Instagram and the Facebook buttons from the footer of the website."
+    def __init__(self, prompt):
+        self.prompt = prompt
         self.target_files = []
 
     def generate_metadata(self):
@@ -80,12 +80,11 @@ def create_pr():
 
     prompt = data["prompt"]
 
-    # Process the prompt (you can add your logic here)
-    # For demonstration, we'll just return the prompt back
-    response = {"message": "Prompt received", "prompt": prompt}
+    pr_generator = PRGenerator(prompt)
+    pr_generator.run()
 
-    return jsonify(response), 200
+    return jsonify({"message": "PR has been raised"})
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000, debug=True)
