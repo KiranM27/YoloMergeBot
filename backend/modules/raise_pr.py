@@ -9,6 +9,7 @@ class RaiseGitHubPR:
         self.prompt = prompt
         self.target_repo_path = target_repo_path
         self.target_files = target_files
+        self.working_dir = os.getcwd()
 
     # name generato for the branch
     # the naming convention for now will be ai-pr/{random_string_10_chars}
@@ -52,6 +53,7 @@ class RaiseGitHubPR:
 
     def clean_up(self):
         os.system("git checkout main")
+        os.chdir(self.working_dir)
 
     def run(self):
         branch_name = self.get_branch_name()
