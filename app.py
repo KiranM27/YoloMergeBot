@@ -7,7 +7,7 @@ from modules.raise_pr import RaiseGitHubPR
 
 class Runner:
     def __init__(self):
-        self.prompt = "Change the text of the Get Started Button to Say Launch App in the Navbar / header."
+        self.prompt = "In the theme swtich on the top right, the default mode should be dark mode. The user should be able to switch to light mode and back"
         self.target_files = []
 
     def generate_metadata(self):
