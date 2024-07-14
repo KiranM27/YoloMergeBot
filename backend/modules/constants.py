@@ -2,13 +2,13 @@ OPEN_AI_API_KEY = (
     "OPEN_AI_API_KEY"  # the key used to access the openai api key in the .env file
 )
 
-OPEN_AI__METADATA_GENERATION_MODEL = (
-    "gpt-3.5-turbo-0125"  # models - https://platform.openai.com/docs/models
-)
-OPEN_AI_FILE_DETECTION_MODEL = "gpt-3.5-turbo-0125"
-OPEN_AI_CODE_GENERATION_MODEL = "gpt-3.5-turbo-0125"
-OPEN_AI_FILE_EVALUATION_MODEL = "gpt-3.5-turbo-0125"
-OPEN_AI_CODE_GENERATION_MODEL = "gpt-3.5-turbo-0125"
+GPT_3_5_MODEL = "gpt-3.5-turbo-0125"  # models - https://platform.openai.com/docs/models
+
+OPEN_AI__METADATA_GENERATION_MODEL = GPT_3_5_MODEL
+OPEN_AI_FILE_DETECTION_MODEL = GPT_3_5_MODEL
+OPEN_AI_CODE_GENERATION_MODEL = GPT_3_5_MODEL
+OPEN_AI_FILE_EVALUATION_MODEL = GPT_3_5_MODEL
+OPEN_AI_CODE_GENERATION_MODEL = GPT_3_5_MODEL
 
 # information about the repo
 TARGET_REPO_INFORMATION = (
@@ -43,5 +43,5 @@ DOCS_FOLDER = "docs"
 METADATA_FILE = "metadata.json"
 
 # repo paths
-TRAGET_REPO_RELATIVE_PATH = "../HyperNext"
+TRAGET_REPO_RELATIVE_PATH = "../../HyperNext"
 TARGET_REPO_SRC_FOLDER = "src"

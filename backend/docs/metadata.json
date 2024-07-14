@@ -1,0 +1,177 @@
+[
+  {
+    "file_name": "page.tsx",
+    "file_path_from_src": "types/page.tsx",
+    "file_path_from_root": "src/types/page.tsx",
+    "file_path_from_here": "../../HyperNext/src/types/page.tsx",
+    "metadata": "This file defines types for pages with primary layout and app props with layout in a Next.js project."
+  },
+  {
+    "file_name": "redux.types.ts",
+    "file_path_from_src": "app/redux/redux.types.ts",
+    "file_path_from_root": "src/app/redux/redux.types.ts",
+    "file_path_from_here": "../../HyperNext/src/app/redux/redux.types.ts",
+    "metadata": "This file defines the types used in Redux related to user data. It includes an interface `IUser` with properties `uid` and `email`, both of type string."
+  },
+  {
+    "file_name": "store.ts",
+    "file_path_from_src": "app/redux/store.ts",
+    "file_path_from_root": "src/app/redux/store.ts",
+    "file_path_from_here": "../../HyperNext/src/app/redux/store.ts",
+    "metadata": "This file contains the Redux store configuration for the HyperNext project. It includes the setup of reducers, creation of the store, and definition of types for the store and state."
+  },
+  {
+    "file_name": "userSlice.ts",
+    "file_path_from_src": "app/redux/slices/userSlice.ts",
+    "file_path_from_root": "src/app/redux/slices/userSlice.ts",
+    "file_path_from_here": "../../HyperNext/src/app/redux/slices/userSlice.ts",
+    "metadata": "This file is userSlice.ts located at ../../HyperNext/src/app/redux/slices/userSlice.ts. It contains a Redux slice for managing user state in the application. The slice includes actions to set user data, such as setUser, setUserEmail, setUserUid, and clearUser. The initial state defines an IUser object with uid and email properties."
+  },
+  {
+    "file_name": "meta.ts",
+    "file_path_from_src": "constants/meta.ts",
+    "file_path_from_root": "src/constants/meta.ts",
+    "file_path_from_here": "../../HyperNext/src/constants/meta.ts",
+    "metadata": "This file contains metadata constants for the HyperNext project, including the product name, tagline, description, and copyright information."
+  },
+  {
+    "file_name": "globals.css",
+    "file_path_from_src": "styles/globals.css",
+    "file_path_from_root": "src/styles/globals.css",
+    "file_path_from_here": "../../HyperNext/src/styles/globals.css",
+    "metadata": "Global CSS file defining color variables and gradient styles for the body background. MediaQuery for dark mode, setting color variables for dark theme. Classes for gradient styling and basic body styles like margin and line-height."
+  },
+  {
+    "file_name": "Container.tsx",
+    "file_path_from_src": "components/Container.tsx",
+    "file_path_from_root": "src/components/Container.tsx",
+    "file_path_from_here": "../../HyperNext/src/components/Container.tsx",
+    "metadata": "This file contains a React functional component called Container, which is a container element for holding other components. It takes children as props, which are React nodes to be rendered inside the container. It also accepts an optional className prop for additional styling. The container is styled using Tailwind CSS classes to center it on the page."
+  },
+  {
+    "file_name": "IconWrapper.tsx",
+    "file_path_from_src": "components/IconWrapper.tsx",
+    "file_path_from_root": "src/components/IconWrapper.tsx",
+    "file_path_from_here": "../../HyperNext/src/components/IconWrapper.tsx",
+    "metadata": "This file contains the code for an `IconWrapper` component in a React project. The component takes an `icon` as a prop, clones the element, and adds a specific class to it before rendering it."
+  },
+  {
+    "file_name": "SectionTitle.tsx",
+    "file_path_from_src": "components/SectionTitle.tsx",
+    "file_path_from_root": "src/components/SectionTitle.tsx",
+    "file_path_from_here": "../../HyperNext/src/components/SectionTitle.tsx",
+    "metadata": "This file is SectionTitle.tsx located in the path ../../HyperNext/src/components/. It contains a functional component called SectionTitle that takes in props for alignment, pretitle, title, and children. The component renders a section title with optional pretitle and children within a Container component. The alignment of the section title can be set to 'left' or 'center'."
+  },
+  {
+    "file_name": "ThemeSwitch.tsx",
+    "file_path_from_src": "components/ThemeSwitch.tsx",
+    "file_path_from_root": "src/components/ThemeSwitch.tsx",
+    "file_path_from_here": "../../HyperNext/src/components/ThemeSwitch.tsx",
+    "metadata": "This file is ThemeSwitch.tsx located at ../../HyperNext/src/components/ThemeSwitch.tsx. It contains a React component that allows users to switch between light and dark themes using next-themes. The component handles theme changes by updating the theme in local storage and rendering the appropriate UI based on the current theme."
+  },
+  {
+    "file_name": "Intro.tsx",
+    "file_path_from_src": "components/Landing/Intro.tsx",
+    "file_path_from_root": "src/components/Landing/Intro.tsx",
+    "file_path_from_here": "../../HyperNext/src/components/Landing/Intro.tsx",
+    "metadata": "This file, Intro.tsx, located at ../../HyperNext/src/components/Landing/Intro.tsx, contains the introductory section of the Next.js Template. It includes the rendering of the project title, a brief description, a link to view the project on Github, an image component, and a section displaying social proof logos of companies like Amazon, Microsoft, Netflix, Sony, and Verizon."
+  },
+  {
+    "file_name": "BenefitBullet.tsx",
+    "file_path_from_src": "components/Landing/BenefitBullet.tsx",
+    "file_path_from_root": "src/components/Landing/BenefitBullet.tsx",
+    "file_path_from_here": "../../HyperNext/src/components/Landing/BenefitBullet.tsx",
+    "metadata": "This file is BenefitBullet.tsx located at ../../HyperNext/src/components/Landing/BenefitBullet.tsx. It defines a React component called BenefitBullet that takes in an icon, title, and children as props to render a styled bullet point with a title and description."
+  },
+  {
+    "file_name": "Benefits.tsx",
+    "file_path_from_src": "components/Landing/Benefits.tsx",
+    "file_path_from_root": "src/components/Landing/Benefits.tsx",
+    "file_path_from_here": "../../HyperNext/src/components/Landing/Benefits.tsx",
+    "metadata": "This file, Benefits.tsx, contains the React component for displaying benefits on the landing page. It receives props for image position and benefit data, and renders the benefits with corresponding images, titles, descriptions, and bullet points."
+  },
+  {
+    "file_name": "ReduxSetExample.tsx",
+    "file_path_from_src": "components/Examples/ReduxSetExample.tsx",
+    "file_path_from_root": "src/components/Examples/ReduxSetExample.tsx",
+    "file_path_from_here": "../../HyperNext/src/components/Examples/ReduxSetExample.tsx",
+    "metadata": "This file, ReduxSetExample.tsx, is located at ../../HyperNext/src/components/Examples/ReduxSetExample.tsx. It contains a React functional component called ReduxSetExample. Inside the component, it imports setUserUid from '@/redux/slices/userSlice', useEffect, and useDispatch from 'react-redux'. The component uses the useEffect hook to dispatch the setUserUid action with a specific user id. Finally, it renders a simple <div> element with the text \"ReduxSetExample\"."
+  },
+  {
+    "file_name": "ReactQueryExample.tsx",
+    "file_path_from_src": "components/Examples/ReactQueryExample.tsx",
+    "file_path_from_root": "src/components/Examples/ReactQueryExample.tsx",
+    "file_path_from_here": "../../HyperNext/src/components/Examples/ReactQueryExample.tsx",
+    "metadata": "This file is ReactQueryExample.tsx located at ../../HyperNext/src/components/Examples/ReactQueryExample.tsx. It contains a React component that fetches and displays GitHub user data using React Query."
+  },
+  {
+    "file_name": "ReduxFetchExample.tsx",
+    "file_path_from_src": "components/Examples/ReduxFetchExample.tsx",
+    "file_path_from_root": "src/components/Examples/ReduxFetchExample.tsx",
+    "file_path_from_here": "../../HyperNext/src/components/Examples/ReduxFetchExample.tsx",
+    "metadata": "This file is ReduxFetchExample.tsx located at ../../HyperNext/src/components/Examples/ReduxFetchExample.tsx. It contains a functional component that demonstrates fetching data from Redux state using react-redux hooks like useSelector and useEffect. It accesses the uid from the Redux state and logs it to the console when it changes."
+  },
+  {
+    "file_name": "Navbar.tsx",
+    "file_path_from_src": "layouts/Navbar.tsx",
+    "file_path_from_root": "src/layouts/Navbar.tsx",
+    "file_path_from_here": "../../HyperNext/src/layouts/Navbar.tsx",
+    "metadata": "This file is a Navbar component located at ../../HyperNext/src/layouts/Navbar.tsx. It contains the navigation bar for the website, including links to different sections such as Product, Features, Pricing, Company, and Blog. The component also includes a logo, a responsive menu toggle, and a theme switch option."
+  },
+  {
+    "file_name": "PrimaryLayout.tsx",
+    "file_path_from_src": "layouts/PrimaryLayout.tsx",
+    "file_path_from_root": "src/layouts/PrimaryLayout.tsx",
+    "file_path_from_here": "../../HyperNext/src/layouts/PrimaryLayout.tsx",
+    "metadata": "This file is PrimaryLayout.tsx located at ../../HyperNext/src/layouts/PrimaryLayout.tsx. It defines a React functional component named PrimaryLayout that serves as the primary layout for the project. The component includes children, title, and description as props. It renders a Head component from Next.js for managing page metadata like title and description. The layout includes a Navbar, a Container component for wrapping children, and a Footer."
+  },
+  {
+    "file_name": "Footer.tsx",
+    "file_path_from_src": "layouts/Footer.tsx",
+    "file_path_from_root": "src/layouts/Footer.tsx",
+    "file_path_from_here": "../../HyperNext/src/layouts/Footer.tsx",
+    "metadata": "This file, Footer.tsx, contains the layout for the footer component of the project. It includes the navigation items, legal items, and social media links. The footer displays the product name, description, legal links (Terms, Privacy, Legal), navigation links (Product, Features, Pricing, Company, Blog), and social media links (Twitter, Facebook, Instagram, LinkedIn). Additionally, it includes a note about placeholder data."
+  },
+  {
+    "file_name": "github.api.ts",
+    "file_path_from_src": "api/github.api.ts",
+    "file_path_from_root": "src/api/github.api.ts",
+    "file_path_from_here": "../../HyperNext/src/api/github.api.ts",
+    "metadata": "This file, located at ../../HyperNext/src/api/github.api.ts, contains functions to fetch GitHub user data and a custom hook to use this data in a Next.js project. It defines a type TGithubUser for GitHub user information, fetches data from the GitHub API, and provides a hook useGithubUser to fetch and use GitHub user data."
+  },
+  {
+    "file_name": "benefits.tsx",
+    "file_path_from_src": "data/benefits.tsx",
+    "file_path_from_root": "src/data/benefits.tsx",
+    "file_path_from_here": "../../HyperNext/src/data/benefits.tsx",
+    "metadata": "This file, benefits.tsx, in the HyperNext/src/data directory, defines the data structure for primary and secondary benefits in the HyperNext project. It includes types for benefits and bullets, as well as declarations for primary and secondary benefits with titles, descriptions, images, and bullet points with icons. The primary benefits focus on utilities like Redux, React Query, and React Portals, while the secondary benefits highlight features such as mobile responsiveness, Next.js & TailwindCSS integration, and light & dark mode support."
+  },
+  {
+    "file_name": "index.tsx",
+    "file_path_from_src": "pages/index.tsx",
+    "file_path_from_root": "src/pages/index.tsx",
+    "file_path_from_here": "../../HyperNext/src/pages/index.tsx",
+    "metadata": "This file is the index page of the HyperNext project located at ../../HyperNext/src/pages/index.tsx. It includes imports for components like Benefits, Intro, and SectionTitle. The page displays information about the benefits of using HyperNext and utilizes PrimaryLayout as the main layout."
+  },
+  {
+    "file_name": "_document.tsx",
+    "file_path_from_src": "pages/_document.tsx",
+    "file_path_from_root": "src/pages/_document.tsx",
+    "file_path_from_here": "../../HyperNext/src/pages/_document.tsx",
+    "metadata": "This file is the _document.tsx located in the pages folder of the HyperNext project. It contains the code for customizing the HTML document structure in Next.js using the Document component. It includes the Html, Head, Main, and NextScript components for defining the overall structure of the HTML document."
+  },
+  {
+    "file_name": "_app.tsx",
+    "file_path_from_src": "pages/_app.tsx",
+    "file_path_from_root": "src/pages/_app.tsx",
+    "file_path_from_here": "../../HyperNext/src/pages/_app.tsx",
+    "metadata": "This file is the `_app.tsx` file located in the `pages` directory of the HyperNext project. It contains the main component for customizing the Next.js app. The code includes imports for Redux store, global styles, page types, theme provider, Redux provider, and React Query client. The `App` component renders the layout, Redux provider, and theme provider for the app, utilizing React Query for data fetching."
+  },
+  {
+    "file_name": "hello.ts",
+    "file_path_from_src": "pages/api/hello.ts",
+    "file_path_from_root": "src/pages/api/hello.ts",
+    "file_path_from_here": "../../HyperNext/src/pages/api/hello.ts",
+    "metadata": "This file is the API route for the Next.js project. It defines a handler function that responds with a JSON object containing the name \"John Doe\" when the route is accessed."
+  }
+]

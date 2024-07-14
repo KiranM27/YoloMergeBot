@@ -5,9 +5,10 @@ from modules.file_evaluator import FileEvaluator
 from modules.code_generator import CodeGenerator
 from modules.raise_pr import RaiseGitHubPR
 
+
 class Runner:
     def __init__(self):
-        self.prompt = "In the theme swtich on the top right, the default mode should be dark mode. The user should be able to switch to light mode and back"
+        self.prompt = "Remove the Instagram and the Facebook buttons from the footer of the website."
         self.target_files = []
 
     def generate_metadata(self):

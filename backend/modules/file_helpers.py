@@ -18,5 +18,9 @@ class FileHelpers:
 
     def store_file_content(self, file_path: str, content: str):
         print(f"[INFO] Storing content in {file_path}")
+        
+        # get the current working directory
+        cwd = os.getcwd()
+        print("cwd: ", cwd) 
         with open(file_path, "w") as file:
             file.write(content)

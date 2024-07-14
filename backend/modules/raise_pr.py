@@ -33,7 +33,7 @@ class RaiseGitHubPR:
             was_edited = target_file["was_edited"]
             if not was_edited:
                 continue
-            file_path = target_file["file_path_from_here"]
+            file_path = target_file["file_path_from_root"]
             file_content = target_file["code"]
             file_helpers.store_file_content(file_path, file_content)
 
