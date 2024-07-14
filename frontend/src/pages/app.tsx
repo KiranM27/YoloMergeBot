@@ -1,6 +1,7 @@
 import { ArrowRightCircleIcon } from '@heroicons/react/24/solid';
 import { Inter } from 'next/font/google';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -9,7 +10,9 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = () => {
+    if (isLoading) return;
     setIsLoading(true);
+    toast.success('Prompt sent successfully!');
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,10 +32,11 @@ const App: React.FC = () => {
           </div>
           {/* Transparent input box */}
         </div>
-        <ArrowRightCircleIcon className="h-24 w-24" />
-      </div>
 
-      {isLoading && <div className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-50 flex justify-center items-center">Loading...</div>}
+        <div className="cursor-pointer" onClick={handleClick}>
+          <ArrowRightCircleIcon className="h-24 w-24" />
+        </div>
+      </div>
     </div>
   );
 };
