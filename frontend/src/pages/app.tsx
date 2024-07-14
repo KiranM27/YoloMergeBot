@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { Inter } from 'next/font/google';
 import { ArrowRightCircleIcon } from '@heroicons/react/24/solid';
-import IconWrapper from '@/components/IconWrapper';
+import { Inter } from 'next/font/google';
+import React, { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
