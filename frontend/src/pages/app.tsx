@@ -1,3 +1,4 @@
+import { createPr } from '@/api/create_pr.api';
 import { ArrowRightCircleIcon } from '@heroicons/react/24/solid';
 import { Inter } from 'next/font/google';
 import React, { useState } from 'react';
@@ -6,13 +7,16 @@ import { toast } from 'react-toastify';
 const inter = Inter({ subsets: ['latin'] });
 
 const App: React.FC = () => {
-  const [input, setInput] = useState('Enter your prompt here ...');
+  const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (isLoading) return;
     setIsLoading(true);
-    toast.success('Prompt sent successfully!');
+
+    const res = await createPr(input);
+    toast.info(res.message);
+    setIsLoading(false);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +32,13 @@ const App: React.FC = () => {
           <img src="/images/app/text_box.jpeg" alt="center" className="h-40 object-cover" />
 
           <div className="h-full w-full absolute top-0 left-0 flex justify-center items-center px-8">
-            <input type="text" value={input} onChange={handleChange} className="w-full bg-transparent text-black text-center border-none outline-none placeholder-black " />
+            <input
+              type="text"
+              value={input}
+              onChange={handleChange}
+              className="w-full bg-transparent text-black text-center border-none outline-none placeholder-black "
+              placeholder="Enter your prompt here ..."
+            />
           </div>
           {/* Transparent input box */}
         </div>
