@@ -76,7 +76,7 @@ def create_pr():
     data = request.get_json()
 
     if not data or "prompt" not in data:
-        return jsonify({"error": "No prompt provided"}), 400
+        return jsonify({"message": "No prompt provided"}), 200
 
     prompt = data["prompt"]
 
