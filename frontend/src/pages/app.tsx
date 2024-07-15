@@ -29,7 +29,7 @@ const App: React.FC = () => {
       <div className="flex flex-row gap-4 justify-center items-center">
         <div className="relative">
           {/* Image acting as the background for the input */}
-          <img src="/images/app/text_box.jpeg" alt="center" className="h-40 object-cover" />
+          <img src="/images/app/text_box.png" alt="center" className="h-40 object-cover" />
 
           <div className="h-full w-full absolute top-0 left-0 flex justify-center items-center px-8">
             <input
