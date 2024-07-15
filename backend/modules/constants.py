@@ -43,5 +43,5 @@ DOCS_FOLDER = "docs"
 METADATA_FILE = "metadata.json"
 
 # repo paths
-TRAGET_REPO_RELATIVE_PATH = "../../HyperNext"
+TARGET_REPO_RELATIVE_PATH = "../../HyperNext"
 TARGET_REPO_SRC_FOLDER = "src"

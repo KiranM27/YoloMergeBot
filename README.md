@@ -67,6 +67,25 @@ The backend of YoloMergeBot is a Python Flask project.
      pip install -r requirements.txt
      ```
 
+### Customizing Constants
+
+To customize the backend, you need to modify certain constants in the `backend/modules/constants.py file`. These constants define the repository paths where you want to raise PRs and the folder containing the main source code.
+
+Located in `backend/modules/constants.py` at lines `45-47`, the following constants need to be adjusted:
+
+```python
+# repo paths
+TARGET_REPO_RELATIVE_PATH = "../../HyperNext"
+TARGET_REPO_SRC_FOLDER = "src"
+```
+
+Explanation
+
+- `TARGET_REPO_RELATIVE_PATH`: This is the relative path to the GitHub repository where you want to raise the PRs. The path should be relative to the backend folder.
+- `TARGET_REPO_SRC_FOLDER`: This is the folder containing the main source code. This path should be relative to the `TARGET_REPO_RELATIVE_PATH`. Ensure that this folder does not include items like node modules or pip libraries.
+
+Adjust these constants as needed to point to your target repository and source folder.
+
 ## Usage
 
 Once both the frontend and backend are set up and running, you can start using YoloMergeBot to automate your code changes. Simply provide the necessary prompts, and YoloMergeBot will handle the rest, raising pull requests for your review.

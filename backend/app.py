@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from modules.code_generator import CodeGenerator
-from modules.constants import TARGET_REPO_SRC_FOLDER, TRAGET_REPO_RELATIVE_PATH
+from modules.constants import TARGET_REPO_RELATIVE_PATH, TARGET_REPO_SRC_FOLDER
 from modules.file_detector import FileDetector
 from modules.file_evaluator import FileEvaluator
 from modules.generate_repo_metadata import RepoMetaDataGenerator
@@ -15,7 +15,7 @@ class PRGenerator:
 
     def generate_metadata(self):
         repo_metadata_generator = RepoMetaDataGenerator(
-            TRAGET_REPO_RELATIVE_PATH, TARGET_REPO_SRC_FOLDER
+            TARGET_REPO_RELATIVE_PATH, TARGET_REPO_SRC_FOLDER
         )
         files = repo_metadata_generator.list_all_files()
 
@@ -46,7 +46,7 @@ class PRGenerator:
     def raise_pr(self):
         try:
             raise_pr = RaiseGitHubPR(
-                self.prompt, TRAGET_REPO_RELATIVE_PATH, self.target_files
+                self.prompt, TARGET_REPO_RELATIVE_PATH, self.target_files
             )
             raise_pr.run()
             print("PR raised.")
