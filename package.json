@@ -1,5 +1,5 @@
 {
-  "name": "prompt-to-pr",
+  "name": "YoloMergeBot",
   "version": "1.0.0",
   "description": "",
   "main": "",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KiranM27/prompt-to-pr.git"
+    "url": "git+https://github.com/KiranM27/YoloMergeBot.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KiranM27/prompt-to-pr/issues"
+    "url": "https://github.com/KiranM27/YoloMergeBot/issues"
   },
-  "homepage": "https://github.com/KiranM27/prompt-to-pr#readme",
+  "homepage": "https://github.com/KiranM27/YoloMergeBot#readme",
   "dependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
