@@ -43,7 +43,7 @@ The frontend of YoloMergeBot is a Next.js project.
    yarn dev
    ```
 
-## Backend Setup
+### Backend Setup
 
 The backend of YoloMergeBot is a Python Flask project.
 
