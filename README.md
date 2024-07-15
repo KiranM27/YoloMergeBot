@@ -8,6 +8,8 @@ YoloMergeBot is an application designed to streamline your development workflow 
 - [Getting Started](#getting-started)
   - [Frontend Setup](#frontend-setup)
   - [Backend Setup](#backend-setup)
+  - [Customizing Constants](#customizing-constants)
+  - [Indexing the Target Repository](#indexing-the-target-repository)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -85,6 +87,18 @@ Explanation
 - `TARGET_REPO_SRC_FOLDER`: This is the folder containing the main source code. This path should be relative to the `TARGET_REPO_RELATIVE_PATH`. Ensure that this folder does not include items like node modules or pip libraries.
 
 Adjust these constants as needed to point to your target repository and source folder.
+
+
+### Indexing the Target Repository
+
+To index the target repository, run the following command to create a document containing the metadata about the target repo:
+
+```python 
+python prepare.py
+```
+
+This command will generate a file `backend/docs/metadata.json` containing the metadata. Once the metadata is created, format the JSON file for the best experience. Ensure that the JSON is formatted using Prettier or other relevant formatters.
+
 
 ## Usage
 
